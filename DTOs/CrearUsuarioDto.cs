@@ -16,9 +16,13 @@ public class CrearUsuarioDto
     [Required, MinLength(6)]
     public string Password { get; set; } = string.Empty;
 
-    [Range(1, 120)]
-    public int Edad { get; set; }
+    [Required]
+    public DateTime FechaNacimiento { get; set; }
 
-    [Range(1, int.MaxValue)]
-    public int RolId { get; set; }
+    [Required, MaxLength(100)]
+    public string Universidad { get; set; } = string.Empty;
+
+    [Required, Range(1, 12)]
+    public int Semestre { get; set; }
+
 }

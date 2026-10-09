@@ -64,8 +64,9 @@ public class UsuarioService : IUsuarioService
             Apellido = d.Apellido.Trim(),
             Correo = correo,
             PasswordHash = passwordHash,
-            Edad = d.Edad,
-            RolId = d.RolId
+            FechaNacimiento = d.FechaNacimiento,
+            Universidad = d.Universidad,
+            Semestre = d.Semestre
         };
 
         await _repo.CrearAsync(usuario);
@@ -155,7 +156,9 @@ public class UsuarioService : IUsuarioService
         usuario.Nombre = d.Nombre.Trim();
         usuario.Apellido = d.Apellido.Trim();
         usuario.Correo = correo;
-        usuario.Edad = d.Edad;
+        usuario.FechaNacimiento = d.FechaNacimiento;
+        usuario.Universidad = d.Universidad;
+        usuario.Semestre = d.Semestre;
         usuario.Activo = d.Activo;
 
         await _repo.ActualizarAsync(usuario);
@@ -192,7 +195,9 @@ public class UsuarioService : IUsuarioService
             Nombre = u.Nombre,
             Apellido = u.Apellido,
             Correo = u.Correo,
-            Edad = u.Edad,
+            FechaNacimiento = u.FechaNacimiento,
+            Universidad = u.Universidad,
+            Semestre = u.Semestre,
             Activo = u.Activo,
             FechaCreacion = u.FechaCreacion
         };
